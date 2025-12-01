@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('Descargar proyecto') {
+            steps {
+                git 'https://github.com/anieto-unir/helloworld.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo "Nada que compilar"
+                echo WORKSPACE
+                sh "pwd && ls -lah"
+            }
+        }
+        stage('Testing'){
+            steps {
+                echo "Vamos con el Testing"
+            }
+        }
+    }
+}
